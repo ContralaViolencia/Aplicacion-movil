@@ -1,0 +1,34 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Modernismo
+      <ion-icon name="transgender" class="color"></ion-icon>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngFor="let m of mJson">
+        <ion-card (click)="itemTapped(m)">
+
+          <ion-card-title>
+            <h1 align="center" style="color:#428bca">{{m.Titulo}}</h1>
+          </ion-card-title>
+
+          <img src="{{m.ruta}}" />
+
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

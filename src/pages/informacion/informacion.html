@@ -1,0 +1,74 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Informacion
+      <ion-icon name="information-circle"></ion-icon>
+    </ion-title>
+
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+  <h1 align="center" style="color:#d9534f">Violencia y sus Tipos</h1>
+  <hr>
+  <p>Conoce lo tipos de violencia que mas comunes que hay y denuncialos en caso de estar sufriendo alguno de ellos ó conocer
+    a alguien que los sufre.
+  </p>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-6 *ngFor="let m of mJson">
+        <ion-card (click)="itemTapped(m)">
+
+          <ion-card-title>
+            <h1 align="center" style="color:#428bca">{{m.Titulo}}</h1>
+          </ion-card-title>
+
+          <img src="{{m.ruta}}" />
+
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card>
+
+          <ion-card-header>
+            <h1 align="center" style="color:#d9534f">Denuncialos</h1>
+            <hr>
+          </ion-card-header>
+
+          <ion-card-content>
+            Puedes denunciar caso de violencia y matlrato con la mujer llamando a
+            <b>Linea Purpura,</b>pulsando el boton que se encuentra debajo
+            <ion-row>
+              <ion-col col-4>
+
+              </ion-col>
+
+              <ion-col col-4>
+                <button ion-fab color="secondary" (click)="call()">
+                  <ion-icon name="call"></ion-icon>
+                </button>
+              </ion-col>
+
+              <ion-col col-4>
+              </ion-col>
+            </ion-row>
+          </ion-card-content>
+
+        </ion-card>
+
+      </ion-col>
+    </ion-row>
+
+  </ion-grid>
+
+
+</ion-content>

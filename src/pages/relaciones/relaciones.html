@@ -1,0 +1,116 @@
+<ion-header>
+	<ion-navbar>
+		<button ion-button menuToggle>
+			<ion-icon name="menu"></ion-icon>
+		</button>
+		<ion-title>Relaciones
+			<ion-icon name="heart" color="danger"></ion-icon>
+		</ion-title>
+	</ion-navbar>
+</ion-header>
+
+<ion-content>
+
+	<ion-grid>
+		<ion-row>
+			<ion-col col-12>
+				<ion-card>
+					<img src="../../assets/img/relaciones1.jpg" />
+					<ion-card-content>
+						<ion-card-title>
+							<h1 align="center" style="color:#428bca">Relaciones y sus Implicaciones</h1>
+						</ion-card-title>
+						<p align="justify">
+							Los seres humanos necesitamos relacionarnos.Las relaciones nos nutren en muchos sentidos,entablar lazos o relaciones con
+							las personas que nos rodean, para poder expresarnos y sentirnos bien con nosotros mismos, tener ese apoyo que representan
+							nuestros amigos o pareja es fundamental para nuestra salud.Darnos el tiempo para conocer y tomarle aprecio a quienes
+							nos rodean es un proceso fundamental en nuestra vida, porque no solo conoces a mas personas si no que no ademas te
+							conoces mejor a ti mismo.
+						</p>
+					</ion-card-content>
+				</ion-card>
+			</ion-col>
+		</ion-row>
+
+		<ion-row>
+			<ion-col col-12>
+
+				<ion-list>
+					<ion-list-header>
+						<h2 align="center" style="color:#d9534f">Signos de una Relacion toxica</h2>
+					</ion-list-header>
+					<a ion-item *ngFor="let r of rToxica;let i = index;" (click)="itemTapped(r)">
+						{{i+1}}.{{r.Titulo}}
+					</a>
+
+				</ion-list>
+
+			</ion-col>
+		</ion-row>
+
+
+		<ion-row>
+			<ion-col col-12>
+
+				<ion-toolbar no-border-top>
+					<ion-segment [(ngModel)]="rValue">
+						<ion-segment-button value="Sanas">
+							Relaciones Saludables
+						</ion-segment-button>
+						<ion-segment-button value="Toxica">
+							Relaciones Toxicas
+						</ion-segment-button>
+
+					</ion-segment>
+				</ion-toolbar>
+
+				<div [ngSwitch]="rValue">
+					<ion-card *ngSwitchCase="'Sanas'">
+						<ion-card-content>
+							<ion-card-title>
+								<h1 align="center" style="color:#32db64">
+									<b> Relaciones Sanas </b>
+								</h1>
+							</ion-card-title>
+							<p align="justify">
+								Una relacion
+								<b> tiene sentido como un vinculo de ayuda mutua</b>, se basa en el respeto y la igualdad y ofrece muchas satisfacciones,produce
+								bienestar y sirve como apoyo,dandose ademas como una oportunidad para madurar y crecer como persona. No debe ser
+								una carga que nos atormenta y hace sufrir cada vez que debemos estar con alguien. Tanto hombres como mujeres debemos
+								dejar atrás el pensamiento de que los celos enfermizos son una forma de demostrar el amor, cuando las verdaderas
+								muestras amorosas son
+								<b> querernos a nosotros mismos para así proyectar seguridad y respeto en nuestra relación.</b>
+							</p>
+
+							<img src="../../assets/img/sanas.png" />
+
+						</ion-card-content>
+					</ion-card>
+
+					<ion-card *ngSwitchCase="'Toxica'">
+
+						<ion-card-content>
+							<ion-card-title>
+								<h1 align="center" style="color:#f53d3d">
+									<b>Relaciones Toxicas</b>
+								</h1>
+							</ion-card-title>
+							<p align="justify">
+								Una relacion o vinculo con alguien debe
+								<b>hacernos sentir bien y comodos con nosotros mismos,</b>
+								para poder reflejar estas sensaciones en la otra persona .Cuando dentro de una relacion no hay confianza respeto o apoyo,
+								hay algo que esta mal. Una relacion no se debe sentir un encadenamiento o opresion por parte de alguien,
+								<b>nadie esta en el derecho de controlar de manera negativa las decisiones que se quieren tomar por cuenta propia, ni
+									mucho menos sufrir de algun tipo de violencia fisica o psicologica</b>, esto da pie a que se formen
+								<i>"relaciones"</i> basadas en la dependencia, el conformismo y la posesión.
+							</p>
+							<img src="../../assets/img/toxicas.jpg" />
+						</ion-card-content>
+					</ion-card>
+				</div>
+			</ion-col>
+		</ion-row>
+
+	</ion-grid>
+
+</ion-content>

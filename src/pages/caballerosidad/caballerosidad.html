@@ -1,0 +1,70 @@
+<!--
+  Generated template for the CaballerosidadPage page.
+
+  See http://ionicframework.com/docs/components/#navigation for more info on
+  Ionic pages and navigation.
+-->
+<ion-header>
+
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Caballerosidad
+      <ion-icon name="person" class="color"></ion-icon>
+    </ion-title>
+  </ion-navbar>
+
+</ion-header>
+
+
+<ion-content padding>
+
+  <ion-slides pager autoplay="3000" loop="true" speed="2000">
+
+    <ion-slide *ngFor="let s of slide">
+      <img src="{{s.ruta}}" class="img-responsive">
+
+      <h3>{{s.Titulo}}</h3>
+      <p>"{{s.SubTitulo}}"</p>
+
+
+    </ion-slide>
+
+  </ion-slides>
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card>
+          <img src="../../assets/img/mano.jpg" />
+          <ion-card-content>
+            <ion-card-title>
+              <h1 align="center" style="color:#428bca">¿Que implica ser un "Caballero" en la actualidad?</h1>
+            </ion-card-title>
+            <p align="justify">
+              El concepto de Caballerosidad a ido perdiendo sentido con el paso de los años, se entiende generalmente por caballero a aquel
+              que es cortes con una mujer pero esto bien podria ser definido como galanteria.La caballerosidad, en realidad,
+              debe ser la demostracion de buenos modales y principios, por ende y poniendo el ejemplo mas basico, seria un
+              caballero aquel hombre que sediera el asiento a una persona que lo necesite sea esta hombre o mujer. Es "caballero"
+              aquella persona que sin importarle los rasgos de las personas con las que esta entablando algun tipo de relacion,
+              se comporta de una manera adecuada, es cordial y amable, utiliza un lenguaje acorde al contexto en que se encuentra
+              y por sobre todo mantiene el respeto. No esta de mas decir que a las mujeres se les debe respetar por el hecho
+              de ser Personas y no por el hecho de ser mujeres.Sin embargo deberiamos dejar de lado estas etiquetas es mejor
+              pensar en que como personas de una sociedad que ha pasado por años de evolucion debemos comportarnos por igual
+              con hombres y mujeres, poniendo por sobre todo el respeto y amabilidad.Asi pues, no cedas el asiento a alguien
+              por ser mujer o hombre cedelo cuando la persona sin importar su sexo lo necesite,Cede el paso a alguien siempre
+              y cuando sea necesario no por el solo hecho de que sea una mujer,Abre la puerta a alguien y permitele el paso
+              sin importar su sexo."No es necesario ser un hombre para ser un 'caballero'". Las personas que hacen el bien,son
+              personas que tienen modales, no son caballeros o damas, son personas virtuosas, a las que tenemos que admirar
+              y seguir como ejemplo, para tener una sociedad de bien, una sociedad en donde encontrar a alguien amable, no
+              sea algo inaudio si no algo cotidiano, donde no veamos dia a dia, insultos y muertes, si no mas bien, apoyo
+              y colaboracion.
+            </p>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+</ion-content>

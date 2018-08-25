@@ -1,0 +1,116 @@
+<ion-header>
+  <ion-navbar>
+    <button ion-button menuToggle>
+      <ion-icon name="menu"></ion-icon>
+    </button>
+    <ion-title>Estado Relacion
+      <ion-icon name="pulse" class="rosa"></ion-icon>
+    </ion-title>
+
+
+  </ion-navbar>
+</ion-header>
+
+
+<ion-content padding>
+
+
+  <ion-grid>
+    <ion-row>
+      <ion-col col-12>
+        <ion-card>
+
+          <ion-card-content>
+            <!-- <ion-card-title>
+              <h1 align="center" style="color:#428bca">algo</h1>
+            </ion-card-title> -->
+
+            <button ion-button block icon-end (click)="goToOtherPage()">
+              Añadir Comportamiento
+              <ion-icon name="md-add-circle"></ion-icon>
+            </button>
+
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12>
+
+        <ion-toolbar no-border-top>
+          <ion-segment [(ngModel)]="rValue">
+            <ion-segment-button value="Buenas">
+              Acciones Buenas
+            </ion-segment-button>
+            <ion-segment-button value="Malas">
+              Acciones Malas
+            </ion-segment-button>
+
+          </ion-segment>
+        </ion-toolbar>
+
+        <div [ngSwitch]="rValue">
+          <ion-card *ngSwitchCase="'Buenas'">
+
+            <ion-list>
+              <ion-item-group>
+                <ion-item-divider color="light">
+                  <h2 align="center" style="color:#5cb85c;">Acciones Buenas</h2>
+                </ion-item-divider>
+                <ion-item *ngFor="let a of accionesBuenas;let i = index;">
+                  <h2 (click)="editar(a.nombre)">{{i+1}}.{{a.nombre}}</h2>
+                  <ion-icon name="ios-trash" item-end (click)="eliminar(a.nombre)"></ion-icon>
+                </ion-item>
+              </ion-item-group>
+            </ion-list>
+
+          </ion-card>
+
+          <ion-card *ngSwitchCase="'Malas'">
+
+            <ion-list>
+              <ion-item-group>
+                <ion-item-divider color="light">
+                  <h2 align="center" style="color:#d9534f">Acciones Malas</h2>
+                </ion-item-divider>
+                <ion-item *ngFor="let a of accionesMalas;let i = index;">
+                  <h2 (click)="editar(a.nombre)">{{i+1}}.{{a.nombre}}</h2>
+                  <ion-icon name="ios-trash" item-end (click)="eliminar(a.nombre)"></ion-icon>
+                </ion-item>
+              </ion-item-group>
+            </ion-list>
+
+          </ion-card>
+        </div>
+      </ion-col>
+    </ion-row>
+
+    <ion-row>
+      <ion-col col-12 *ngIf="nociva">
+
+              <h1 align="center" style="color:#d9534f">Su Relacion Esta Siendo Nociva</h1>
+              <hr>
+            
+            <h4 align="justify">Hay varios puntos negativos en tu relacion,revisalos  y actua en pro de ello</h4>
+
+            <img src="../../assets/img/mal.png" />
+      </ion-col>
+      <ion-col col-12 *ngIf="!nociva">
+
+          <h1 align="center" style="color:#5cb85c;">Su Relacion Esta Por Buen Camino</h1>
+          <hr>
+        
+        <h4 align="justify">En tu Relacion hay mas cosas positivas que negativas,
+          sigue reforzando estos aspectos para estar en tranquilidad con tu pareja.
+        </h4>
+        <img src="../../assets/img/bien.png" />
+
+    </ion-col>
+
+
+    </ion-row>
+
+  </ion-grid>
+
+</ion-content>
