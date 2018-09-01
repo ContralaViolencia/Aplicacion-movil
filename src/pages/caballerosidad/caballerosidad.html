@@ -23,7 +23,7 @@
   <ion-slides pager autoplay="3000" loop="true" speed="2000">
 
     <ion-slide *ngFor="let s of slide">
-      <img src="{{s.ruta}}" class="img-responsive">
+      <img [src]="s.ruta" class="img-responsive">
 
       <h3>{{s.Titulo}}</h3>
       <p>"{{s.SubTitulo}}"</p>

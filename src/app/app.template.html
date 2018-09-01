@@ -35,6 +35,17 @@
           {{p.title}}
         </button>
       </ion-list>
+      
+      <ion-list>
+        <ion-list-header>
+          
+          Fedesoft
+        </ion-list-header>
+        <button ion-item menuClose *ngFor="let p of derechosPage" (click)="openPage(p)" [class.activeHighlisght]="checkActive(p)">
+          <ion-icon item-start [name]="p.icon" [style.color]="p.estilo" ></ion-icon>
+          {{p.title}}
+        </button>
+      </ion-list>
 
       <ion-list>
         <hr>

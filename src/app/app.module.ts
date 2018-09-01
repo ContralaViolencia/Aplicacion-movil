@@ -14,8 +14,7 @@ import { ConferenceApp } from './app.component';
 
 
 import { RelacionesPage } from '../pages/relaciones/relaciones';
-import { MapPage } from '../pages/map/map';
-import { SchedulePage } from '../pages/schedule/schedule';
+
 
 import { RelacionesDetailPage } from '../pages/relacionesDetalle/relacionsDetalle';
 
@@ -31,6 +30,8 @@ import { SobreTiDetallePage } from '../pages/sobre-ti-detalle/sobre-ti-detalle';
 import { InformacionPage } from '../pages/informacion/informacion';
 import { EstadoRelacionPage } from '../pages/estado-relacion/estado-relacion';
 import { CreateAccionPage } from '../pages/create-accion/create-accion';
+import { InformacionDetallePage } from '../pages/informacion-detalle/informacion-detalle';
+import { DerechosPage} from '../pages/derechos/derechos';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -42,8 +43,6 @@ import { CallNumber } from '@ionic-native/call-number'
   declarations: [
     ConferenceApp,
     RelacionesPage,
-    MapPage,
-    SchedulePage,
     RelacionesDetailPage,
     TabsPage,
     CaballerosidadPage,
@@ -53,7 +52,9 @@ import { CallNumber } from '@ionic-native/call-number'
     SobreTiDetallePage,
     InformacionPage,
     EstadoRelacionPage,
-    CreateAccionPage
+    CreateAccionPage,
+    InformacionDetallePage,
+    DerechosPage
   ],
   imports: [
     BrowserModule,
@@ -61,9 +62,7 @@ import { CallNumber } from '@ionic-native/call-number'
     IonicModule.forRoot(ConferenceApp, {}, {
       links: [
         { component: TabsPage, name: 'TabsPage', segment: 'tabs-page' },
-        { component: SchedulePage, name: 'Schedule', segment: 'schedule' },
         { component: RelacionesDetailPage, name: 'RelacionesDetailPage', segment: 'RelacionesDetalle' },
-        { component: MapPage, name: 'Map', segment: 'map' },
         { component: RelacionesPage, name: 'RelacionesPage', segment: 'relaciones' },
 
         { component: CaballerosidadPage, name: 'CaballerosidadPage', segment: 'caballero' },
@@ -73,7 +72,9 @@ import { CallNumber } from '@ionic-native/call-number'
         { component: SobreTiDetallePage, name: 'SobreTiDetallePage', segment: 'sobreTiDetalles' },
         { component: InformacionPage, name: 'InformacionPage', segment: 'informacion' },
         { component: EstadoRelacionPage, name: 'EstadoRelacionPage', segment: 'EstadoRelacion' },
-        { component: CreateAccionPage, name: 'CreateAccionPage', segment: 'CrearAccion' }
+        { component: CreateAccionPage, name: 'CreateAccionPage', segment: 'CrearAccion' },
+        { component: InformacionDetallePage, name: 'InformacionDetallePega', segment: 'Detalle' },
+        { component: DerechosPage, name: 'DerechosPage', segment: 'Derechos' }
       ]
     }),
     IonicStorageModule.forRoot()
@@ -82,8 +83,6 @@ import { CallNumber } from '@ionic-native/call-number'
   entryComponents: [
     ConferenceApp,
     RelacionesPage,
-    MapPage,
-    SchedulePage,
     RelacionesDetailPage,
     TabsPage,
     CaballerosidadPage,
@@ -93,7 +92,9 @@ import { CallNumber } from '@ionic-native/call-number'
     SobreTiDetallePage,
     InformacionPage,
     EstadoRelacionPage,
-    CreateAccionPage
+    CreateAccionPage,
+    InformacionDetallePage,
+    DerechosPage
   ],
   providers: [
     { provide: ErrorHandler, useClass: IonicErrorHandler },

@@ -26,10 +26,10 @@
         <ion-card (click)="itemTapped(m)">
 
           <ion-card-title>
-            <h1 align="center" style="color:#428bca">{{m.Titulo}}</h1>
+            <h1 align="center" style="color:#428bca">{{m.titulo}}</h1>
           </ion-card-title>
 
-          <img src="{{m.ruta}}" />
+          <img [src]="m.ruta" />
 
         </ion-card>
 

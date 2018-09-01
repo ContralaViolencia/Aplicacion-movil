@@ -2,7 +2,7 @@
 <ion-header>
 
   <ion-navbar>
-    <ion-title>{{selectedItem.Titulo}}
+    <ion-title>{{selectedItem.titulo}}
         <ion-icon [name]="selectedItem.icono" [style.color]="selectedItem.color"></ion-icon>
     </ion-title>
   </ion-navbar>
@@ -28,19 +28,19 @@
 
       <ion-card>
           <ion-card-header>
-              <h2 align="center" style="color:#f0ad4e">{{selectedItem.Enunciado}} 
-                  <h1><small style="color:blue"> {{selectedItem.SubTitulo}}</small> </h1>
+              <h2 align="center" style="color:#f0ad4e">{{selectedItem.enunciado}} 
+                  <h1><small style="color:blue"> {{selectedItem.subTitulo}}</small> </h1>
               </h2>
                <hr>
             </ion-card-header>
       
             <ion-card-content>
       
-          <p>
-            {{selectedItem.Contenido}}
+          <p align="justify">
+            {{selectedItem.contenido}}
           </p>
       
-          <img src="{{selectedItem.ruta}}" />
+          <img [src]="selectedItem.ruta" />
       
         </ion-card-content>
     </ion-card>

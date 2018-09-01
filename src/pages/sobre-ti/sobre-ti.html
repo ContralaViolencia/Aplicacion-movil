@@ -15,9 +15,9 @@
 <ion-content class="card-background-page">
 
     <ion-card *ngFor="let w of wJson" (click)="itemTapped(w)">
-      <img src="{{w.ruta}}"/>
-      <div class="card-title">{{w.Titulo}}</div>
-      <div class="card-subtitle">{{w.SubTitulo}}</div>
+      <img [src]="w.ruta"/>
+      <div class="card-title">{{w.titulo}}</div>
+      <div class="card-subtitle">{{w.subTitulo}}</div>
     </ion-card>
   
   </ion-content>

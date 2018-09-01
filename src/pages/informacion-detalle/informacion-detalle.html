@@ -9,9 +9,7 @@
 
 
 <ion-content padding>
-    <!-- <ion-grid>
-        <ion-row>
-          <ion-col col-12> -->
+
             <ion-card>
               <img [src]="selectedItem.ruta" />
               <ion-card-content>
@@ -21,9 +19,18 @@
                 <p align="justify">
                     {{selectedItem.contenido}}
                 </p>
+
+                <ion-list>
+                  <ion-list-header>
+                    <h2 align="center" style="color:#d9534f">Manifestaciones</h2>
+                  </ion-list-header>
+                  <a ion-item *ngFor="let r of selectedItem.manifestaciones;let i = index;">
+                    {{i+1}}.{{r}}
+                  </a>
+        
+                </ion-list>
+
               </ion-card-content>
             </ion-card>
-          <!-- </ion-col>
-        </ion-row>
-    </ion-grid> -->
+
 </ion-content>

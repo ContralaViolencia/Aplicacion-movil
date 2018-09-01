@@ -15,7 +15,6 @@ export class ModernismoDetailPage {
     public navParams: NavParams
   ) {
     this.selectedItem = navParams.get('item');
-    console.log(this.selectedItem);
   }
 
 }

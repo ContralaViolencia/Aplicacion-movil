@@ -26,11 +26,11 @@
   
                 <ion-item>
                   <ion-label floating>Accion</ion-label>
-                  <ion-input type="text" value=""></ion-input>
+                  <ion-input type="text" value="" [(ngModel)]="accion"></ion-input>
                 </ion-item>
                 <ion-item>
                     <ion-label floating>Categoria</ion-label>
-                    <ion-select [(ngModel)]="accion" [selectOptions]="selectOptions" >
+                    <ion-select [(ngModel)]="tipoAccion" [selectOptions]="selectOptions" >
                       <ion-option value="Buena">Buena</ion-option>
                       <ion-option value="Mala">Mala</ion-option>
                     </ion-select>
@@ -42,15 +42,15 @@
               <ion-row>
                 <ion-col col-6>
   
-                  <button ion-button icon-end color="secondary">
+                  <button ion-button icon-end color="secondary" (click)="guardar()">
                     Crear
                     <ion-icon name="md-checkmark"></ion-icon>
                   </button>
-  
+
                 </ion-col>
                 <ion-col col-6>
   
-                  <button ion-button icon-end color="danger">
+                  <button ion-button icon-end color="danger" (click)="volver()">
                     Cancelar
                     <ion-icon name="close"></ion-icon>
                   </button>

@@ -17,7 +17,7 @@ import { ModernismoPage } from '../pages/modernismo/modernismo';
 import { SobreTiPage } from '../pages/sobre-ti/sobre-ti';
 import { InformacionPage } from '../pages/informacion/informacion';
 import { EstadoRelacionPage } from '../pages/estado-relacion/estado-relacion';
-
+import { DerechosPage} from '../pages/derechos/derechos';
 
 import { ConferenceData } from '../providers/conference-data';
 import { UserData } from '../providers/user-data';
@@ -51,15 +51,20 @@ export class ConferenceApp {
     { title: 'Informacion', name: 'TabsPage', component: TabsPage, tabComponent: InformacionPage, index: 0, icon: 'information-circle',estilo:"#488aff" },
     // { title: 'Denuncia', name: 'TabsPage', component: TabsPage, tabComponent: SchedulePage, index: 1, icon: 'paper' },
     // { title: 'Boton de Panico', name: 'TabsPage', component: TabsPage, tabComponent: MapPage, index: 2, icon: 'warning',estilo:"#f0ad4e" },
-    { title: 'Estado', name: 'EstadoRelacionPage', component: EstadoRelacionPage, icon: 'pulse', estilo: 'palevioletred' }
+    { title: 'Estado', name: 'TabsPage', component: TabsPage, tabComponent: EstadoRelacionPage, index: 1, icon: 'pulse',estilo:"palevioletred" }
+    // { title: 'Estado', name: 'EstadoRelacionPage', component: EstadoRelacionPage, icon: 'pulse', estilo: 'palevioletred' }
   ];
 
    contenidoPages: PageInterface[] = [
     { title: 'Relaciones', name: 'RelacionesPage', component: RelacionesPage, icon: 'heart', estilo: 'red' },
     { title: 'Sobre Ti', name: 'SobreTiPage', component: SobreTiPage, icon: 'rose' , estilo: '#32db64'},
-    { title: 'Modernismo', name: 'ModernismoPage', component: ModernismoPage, icon: 'transgender', estilo: 'purple' },
+    { title: 'Modernidad', name: 'ModernismoPage', component: ModernismoPage, icon: 'transgender', estilo: 'purple' },
     { title: 'Caballerosidad', name: 'CaballerosidadPage', component: CaballerosidadPage, icon: 'person',estilo: "#57300a" }
   ];
+
+  derechosPage:PageInterface[] = [
+    { title: 'Derechos', name: 'DerechosPage', component: DerechosPage, icon: 'briefcase' }
+  ]
   rootPage = InformacionPage;
 
   constructor(

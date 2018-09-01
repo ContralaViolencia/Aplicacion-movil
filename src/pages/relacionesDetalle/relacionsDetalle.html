@@ -6,16 +6,16 @@
 
 <ion-content padding>
   <div>
-    <h2 align="center" style="color:#d9534f">{{selectedItem.Titulo}} 
-      <h1 style="color:blue"><small> {{selectedItem.SubTitulo}}</small> </h1>
+    <h2 align="center" style="color:#d9534f">{{selectedItem.titulo}} 
+      <h1 style="color:blue"><small> {{selectedItem.subTitulo}}</small> </h1>
     </h2>
    <hr>
 
     <p>
-      {{selectedItem.Contenido}}
+      {{selectedItem.contenido}}
     </p>
 
-    <img src="{{selectedItem.ruta}}" />
+    <img [src]="selectedItem.ruta" />
 
   </div>
 </ion-content>

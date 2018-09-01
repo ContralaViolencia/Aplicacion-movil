@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, DoCheck } from '@angular/core';
 import { IonicPage, NavController, NavParams, AlertController } from 'ionic-angular';
 import { CreateAccionPage } from '../../pages/create-accion/create-accion';
 
@@ -7,51 +7,41 @@ import { CreateAccionPage } from '../../pages/create-accion/create-accion';
   selector: 'page-estado-relacion',
   templateUrl: 'estado-relacion.html',
 })
-export class EstadoRelacionPage {
+export class EstadoRelacionPage implements DoCheck {
 
-  nociva = true;
+  nociva = false;
   rValue: string = "Buenas";
 
-  accionesBuenas = [
-    {
-      id: 1,
-      nombre: 'Confianza'
-    },
-    {
-      id: 2,
-      nombre: 'Honestidad'
-    },
-    {
-      id: 3,
-      nombre: 'Buen Trato'
-    },
-  ]
+  accionesBuenas:string[] = [];
 
-  accionesMalas = [
-    {
-      id: 1,
-      nombre: 'Mentiras'
-    },
-    {
-      id: 2,
-      nombre: 'Celos Obsesivos'
-    },
-    {
-      id: 3,
-      nombre: 'Reclamo Innecesario'
-    },
-    {
-      id: 4,
-      nombre: 'Es Puto'
-    },
-  ]
+  accionesMalas:string[] = [];
+
   constructor(public navCtrl: NavController, public navParams: NavParams, public alertCtrl: AlertController) {
+  if( localStorage.getItem('data') ){
+    this.accionesBuenas = JSON.parse(localStorage.getItem('data'))
+  }
+  if( localStorage.getItem('data2') ){
+    this.accionesMalas = JSON.parse(localStorage.getItem('data2'))
+  }
   }
 
 
+  ngDoCheck(){
+    if( localStorage.getItem('data') ){
+      this.accionesBuenas = JSON.parse(localStorage.getItem('data'))
+    }
+    if( localStorage.getItem('data2') ){
+      this.accionesMalas = JSON.parse(localStorage.getItem('data2'))
+    }
 
+    if( (this.accionesBuenas.length > this.accionesMalas.length) ){
+      this.nociva = false;
+    }else{
+      this.nociva = true;
+    }
+  }
 
-  eliminar(a) {
+  eliminarB(a,i) {
     const confirm = this.alertCtrl.create({
       title: 'Borrar Esta Accion',
       message: '¿Desea borrar la siguiente accion: ' + a + '?',
@@ -59,7 +49,8 @@ export class EstadoRelacionPage {
         {
           text: 'Borrar',
           handler: () => {
-            console.log('Item Borrado');
+            this.accionesBuenas.splice(i, 1),
+            localStorage.setItem('data',JSON.stringify(this.accionesBuenas));
           }
         },
         {
@@ -72,29 +63,84 @@ export class EstadoRelacionPage {
     });
     confirm.present();
   }
+  
+  eliminarM(a,i) {
+    const confirm = this.alertCtrl.create({
+      title: 'Borrar Esta Accion',
+      message: '¿Desea borrar la siguiente accion: ' + a + '?',
+      buttons: [
+        {
+          text: 'Borrar',
+          handler: () => {
+            this.accionesMalas.splice(i, 1);
+            localStorage.setItem('data2',JSON.stringify(this.accionesMalas));
+          }
+        },
+        {
+          text: 'Cancelar',
+          handler: () => {
+            
+          }
+        }
+      ]
+    });
+    confirm.present();
+  }
 
-  editar(a) {
+  editarB(a,i) {
     const prompt = this.alertCtrl.create({
       title: 'Editar Accion',
       message: "",
       inputs: [
         {
-          name: 'title',
-          placeholder: 'Title',
-          value:a
+          name: 'Accion',
+          placeholder: 'Accion',
+          value: a
+        },
+      ],
+      buttons: [
+        {
+          text: 'Guardar',
+          handler: a => {
+            this.accionesBuenas[i] = a.Accion; 
+            localStorage.setItem('data',JSON.stringify(this.accionesBuenas));
+          }
+        },
+        {
+          text: 'Cancelar',
+          handler: () => {
+            
+          }
+        }
+      ]
+    });
+    prompt.present();
+  }
+
+
+  editarM(a,i) {
+    const prompt = this.alertCtrl.create({
+      title: 'Editar Accion',
+      message: "",
+      inputs: [
+        {
+          name: 'Accion',
+          placeholder: 'Accion',
+          value: a
         },
       ],
       buttons: [
         {
           text: 'Guardar',
           handler: () => {
-            console.log('Editado');
+            this.accionesMalas[i] = a.Accion;  
+            localStorage.setItem('data2',JSON.stringify(this.accionesMalas));
           }
         },
         {
           text: 'Cancelar',
           handler: () => {
-            console.log('Cancelado');
+            
           }
         }
       ]
